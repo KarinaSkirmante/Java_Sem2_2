@@ -17,9 +17,20 @@ public class Professor {
 		return degree;
 	}
 	
+	//3.set funkcijas
+	public void setName(String name) {
+		if(name.matches(""))
+		{
+			this.name = name;
+		}
+		else
+		{
+			this.name = "notknown";
+		}
+	}
 	
-	
-//3.set funkcijas
+		
+
 //4. konstruktori
 //5. toString funkcija
 //6. - pārējās funkcijas
