@@ -69,8 +69,20 @@ public class Professor {
 		setDegree(degree);
 	}
 	
-
-//5. toString funkcija
+	/*@Override
+	public String toString() {
+		return "Professor [name=" + name + ", surname=" + surname + ", degree=" + degree + "]";
+	}
+	
+//Professor [name=Karina, surname=Sķirmante, degree=master]
+	*/
+	
+//5. toString funkcija'
+	//Karina Sķirmante master
+	public String toString()
+	{
+		return name + " " + surname + " " + degree;
+	}
 //6. - pārējās funkcijas
 	
 	
