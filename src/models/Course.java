@@ -26,6 +26,7 @@ public class Course {
 		return professor;
 	}
 
+	//2.2. set funkcijas
 	public void setId() {
 		this.id = idCounter++;
 	}
@@ -63,12 +64,31 @@ public class Course {
 		}
 	}
 	
-	//2.2. set funkcijas
-	
 	
 	
 	//3.konstruktori
+	public Course()
+	{
+		setId();
+		setTitle("Testa kurss");
+		setCreditPoints((byte)2);
+		setProfessor(new Professor());
+	}
+	public Course(String title, byte creditPoints, Professor professor)
+	{
+		setTitle(title);
+		setCreditPoints(creditPoints);
+		setProfessor(professor);
+	}
+	
+	
+	
+	
+	
+	
+	
 	//4.toString
+	//5.VeAService main funkcijā izveidot 3 kursus un tos izprintēt
 	
 
 }
