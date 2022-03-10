@@ -76,18 +76,24 @@ public class Course {
 	}
 	public Course(String title, byte creditPoints, Professor professor)
 	{
+		setId();
 		setTitle(title);
 		setCreditPoints(creditPoints);
 		setProfessor(professor);
 	}
-	
-	
-	
-	
-	
-	
-	
 	//4.toString
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", title=" + title + 
+				", creditPoints=" + creditPoints + ", professor=" + professor.getName() + " " +professor.getSurname()+ "]";
+	}
+	
+	
+
+	
+	
+	
+	
 	//5.VeAService main funkcijā izveidot 3 kursus un tos izprintēt
 	
 
