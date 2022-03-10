@@ -3,14 +3,23 @@ package models;
 
 public class Professor {
 //1.mainīgie
+	private int id;
 	private String name;
 	private String surname;
 	private ProfDegree degree;
 	
+	private static int idCounter = 0; //nevajag ne set, ne get
+	
 //2.get funkcijas
+	
+	public int getId() {
+		return id;
+	}
+	
 	public String getName() {
 		return name;
 	}
+
 	public String getSurname() {
 		return surname;
 	}
@@ -19,6 +28,12 @@ public class Professor {
 	}
 	
 	//3.set funkcijas
+	public void setId()
+	{
+		this.id = idCounter;
+		idCounter++;
+	}
+	
 	public void setName(String name) {
 		if(name!=null && name.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\\s?([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+)?"))
 		{
@@ -57,6 +72,7 @@ public class Professor {
 //4. konstruktori
 	public Professor()
 	{
+		setId();
 		setName("Test");
 		setSurname("Professor");
 		setDegree(ProfDegree.master);
@@ -64,6 +80,7 @@ public class Professor {
 	
 	public Professor(String name, String surname, ProfDegree degree)
 	{
+		setId();
 		setName(name);
 		setSurname(surname);
 		setDegree(degree);
@@ -78,10 +95,10 @@ public class Professor {
 	*/
 	
 //5. toString funkcija'
-	//Karina Sķirmante master
+	//0 Karina Sķirmante master
 	public String toString()
 	{
-		return name + " " + surname + " " + degree;
+		return id+ " "+name + " " + surname + " " + degree;
 	}
 //6. - pārējās funkcijas
 	
