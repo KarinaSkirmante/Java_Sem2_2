@@ -19,7 +19,6 @@ public class Professor {
 	}
 	
 	//3.set funkcijas
-	//name = null;
 	public void setName(String name) {
 		if(name!=null && name.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\\s?([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+)?"))
 		{
@@ -56,6 +55,21 @@ public class Professor {
 		
 
 //4. konstruktori
+	public Professor()
+	{
+		setName("Test");
+		setSurname("Professor");
+		setDegree(ProfDegree.master);
+	}
+	
+	public Professor(String name, String surname, ProfDegree degree)
+	{
+		setName(name);
+		setSurname(surname);
+		setDegree(degree);
+	}
+	
+
 //5. toString funkcija
 //6. - pārējās funkcijas
 	
