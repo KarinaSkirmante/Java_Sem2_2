@@ -87,14 +87,26 @@ public class Course {
 		return "Course [id=" + id + ", title=" + title + 
 				", creditPoints=" + creditPoints + ", professor=" + professor.getName() + " " +professor.getSurname()+ "]";
 	}
-	
-	
 
+	@Override
+	public boolean equals(Object obj) {
+		Course otherCourse = (Course)obj;
+		if(title.equals(otherCourse.getTitle()) && creditPoints == otherCourse.getCreditPoints())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+		
+	}
 	
 	
 	
 	
-	//5.VeAService main funkcijā izveidot 3 kursus un tos izprintēt
+	
 	
 
 }

@@ -91,7 +91,7 @@ public class VeAService {
 		
 		for (Person pers : allPersons) {
 					
-			if(pers instanceof Student)
+			if(pers instanceof Professor)
 			{
 				Professor prof = (Professor)pers;
 				System.out.println(prof.getDegree());
@@ -99,5 +99,28 @@ public class VeAService {
 		}
 
 	}
+	
+	//CRUD  -create, read, update, delete
+	//C - create
+	private static boolean addNewCourse(String title, byte creditPoints, Professor professor)
+	{
+		Course course = new Course(title, creditPoints, professor);
+		if(allCourses.contains(course))
+		{
+			return false;
+		}
+		else
+		{
+			allCourses.add(course);
+			return true;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }
