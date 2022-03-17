@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.PriorityQueue;
 import java.util.Random;
 
 import models.Course;
@@ -21,7 +22,7 @@ public class VeAService {
 	//private static ArrayList<Student> allStudents = new ArrayList<>();
 	private static ArrayList<Grade> allGrades = new ArrayList<>();
 	private static ArrayList<Person> allPersons = new ArrayList<>();
-	
+	private static PriorityQueue<Course> allCourseByPriority = new PriorityQueue<>();
 	
 	public static void main(String[] args) {
 		Random     rand = new Random();
@@ -38,10 +39,10 @@ public class VeAService {
 		}*/
 		
 		System.out.println("-------------------------------------------------");
-		Course c1 = new Course("Programmēšana tīmeklī JAVA", (byte)4, prof1);
-		Course c2 = new Course("Objektorientētā programmēšana", (byte)4, prof2);
-		Course c3 = new Course("Datu Struktūras", (byte)4, prof1);
-		Course c4 = new Course("Algoritmu teorija", (byte)4, prof3);
+		Course c1 = new Course("Programmēšana tīmeklī JAVA", (byte)2, prof1);
+		Course c2 = new Course("Objektorientētā programmēšana", (byte)6, prof2);
+		Course c3 = new Course("Datu Struktūras", (byte)1, prof1);
+		Course c4 = new Course("Algoritmu teorija", (byte)8, prof3);
 		allCourses.add(c1);
 		allCourses.add(c2);
 		allCourses.add(c3);
@@ -97,6 +98,17 @@ public class VeAService {
 				System.out.println(prof.getDegree());
 			}
 		}
+		
+		
+		allCourseByPriority.add(c1);
+		allCourseByPriority.add(c2);
+		allCourseByPriority.add(c3);
+		allCourseByPriority.add(c4);
+		for (Course cour : allCourseByPriority) {
+			System.out.println(cour);
+		}
+		
+		
 
 	}
 	

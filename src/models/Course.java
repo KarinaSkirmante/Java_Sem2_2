@@ -1,6 +1,6 @@
 package models;
 
-public class Course {
+public class Course implements Comparable<Course>{
 	//1.mainīgie
 	private int id;
 	private String title;
@@ -101,6 +101,22 @@ public class Course {
 		}
 		
 		
+	}
+
+	@Override
+	public int compareTo(Course o) {
+		if(creditPoints > o.creditPoints)
+		{
+			return 1;
+		}
+		else if (creditPoints < o.creditPoints)
+		{
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 	
 	
