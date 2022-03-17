@@ -166,6 +166,60 @@ public class VeAService {
 		return false;
 	}
 	
+	//1.funkcija galven, ja vēlamies noeikt vidējo atzīmi konkrētam studentam
+	private static float calculateAVGGradeByStudent(int studentId)
+	{
+	//2. pāŗbuadm ienākošo parametru
+		if(studentId>=100000 && studentId<1000000)
+		{
+	//3. izveidosim mainīgos priekš atzīmju summas
+	//4. izmaveidosim mainīgos priekš atzīmju skaita
+			float sum = 0;
+			int gradeCounter = 0;
+	//5.for vai for ech ciklā iet cuari visām atzīmēm allGrades sarakstā un pāŗbauda,
+	//via ir šī konkrēta padotāa studnta atzīme
+			for(Grade gr: allGrades)
+			{
+				if(gr.getStudent().getId() == studentId)
+				{
+					sum+=gr.getGradeValue();
+					gradeCounter++;
+				}
+			}
+			return sum/gradeCounter;
+	//5.1. ja ir, td to pieksiatam atzīju summa un palielinām atzīmju skaitu par 1
+	//6. apreķinām vidēo atzmi un to atgriežam
+		}
+		return 0;
+	}
+	
+	//1.funkcija galven, ja vēlamies noeikt vidējo atzīmi konkrētam studentam
+		private static float calculateAVGGradeByCourse(int courseId)
+		{
+		//2. pāŗbuadm ienākošo parametru
+			if(courseId>=10000 && courseId<100000)
+			{
+		//3. izveidosim mainīgos priekš atzīmju summas
+		//4. izmaveidosim mainīgos priekš atzīmju skaita
+				float sum = 0;
+				int gradeCounter = 0;
+		//5.for vai for ech ciklā iet cuari visām atzīmēm allGrades sarakstā un pāŗbauda,
+		//via ir šī konkrēta padotāa studnta atzīme
+				for(Grade gr: allGrades)
+				{
+					if(gr.getCourse().getId()==courseId)
+					{
+						sum+=gr.getGradeValue();
+						gradeCounter++;
+					}
+				}
+				return sum/gradeCounter;
+		//5.1. ja ir, td to pieksiatam atzīju summa un palielinām atzīmju skaitu par 1
+		//6. apreķinām vidēo atzmi un to atgriežam
+			}
+			return 0;
+		}
+
 	
 	
 	
