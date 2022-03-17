@@ -104,9 +104,22 @@ public class VeAService {
 		allCourseByPriority.add(c2);
 		allCourseByPriority.add(c3);
 		allCourseByPriority.add(c4);
+		System.out.println("---------------");
 		for (Course cour : allCourseByPriority) {
 			System.out.println(cour);
 		}
+		System.out.println("---------------");
+		allCourseByPriority.poll();
+		for (Course cour : allCourseByPriority) {
+			System.out.println(cour);
+		}
+		System.out.println("---------------");
+		allCourseByPriority.poll();
+		for (Course cour : allCourseByPriority) {
+			System.out.println(cour);
+		}
+		
+		
 		
 		
 
