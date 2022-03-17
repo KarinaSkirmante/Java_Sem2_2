@@ -115,18 +115,39 @@ public class VeAService {
 			return true;
 		}
 	}
-	
+	//R - read
 	private static Course readCourseById(int courseId)
 	{
 		if(courseId>=10000 && courseId<100000)
 		{
-			
+			for (Course course : allCourses) {
+				if(course.getId() == courseId)
+				{
+					return course;
+				}
+			}
 		}
 		
 		return new Course();
 	}
 	
-	
+	//U - update
+	private static boolean updateCourseById(int courseId, byte updateCp, Professor updateProfessor)
+	{
+		if(courseId>=10000 && courseId<100000)
+		{
+			for (Course course : allCourses) {
+				if(course.getId() == courseId)
+				{
+					course.setCreditPoints(updateCp);
+					course.setProfessor(updateProfessor);
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
 	
 	
 	
