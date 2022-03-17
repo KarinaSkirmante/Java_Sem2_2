@@ -42,6 +42,11 @@ public class VeAService {
 		Grade gr1 = new Grade(10, stud1, c1);//Jānis, JAVA, 10
 		Grade gr2 = new Grade(5, stud1, c4);//Jānis, DatuStr, 5
 		Grade gr3 = new Grade(3, stud2, c1);//Līga, JAVA, 3
+		Grade gr4 = new Grade(5, stud2, c2);//Līga, OOP, 5
+		Grade gr5 = new Grade(6, stud2, c3);//Līga, DatuStr, 6
+		Grade gr6 = new Grade(1, stud3, c3);//Baiba, DatuStr, 1
+		Grade gr7 = new Grade(10, stud3, c4);//Baiba, Alg, 10
+		
 		System.out.println(gr1);
 		System.out.println(gr2);
 		System.out.println(gr3);

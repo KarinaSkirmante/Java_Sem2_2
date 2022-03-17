@@ -1,11 +1,8 @@
 package models;
 
-
-public class Professor {
+public class Professor extends Person {
 //1.mainīgie
 	private int id;
-	private String name;
-	private String surname;
 	private ProfDegree degree;
 	
 	private static int idCounter = 0; //nevajag ne set, ne get
@@ -16,13 +13,7 @@ public class Professor {
 		return id;
 	}
 	
-	public String getName() {
-		return name;
-	}
 
-	public String getSurname() {
-		return surname;
-	}
 	public ProfDegree getDegree() {
 		return degree;
 	}
@@ -34,26 +25,7 @@ public class Professor {
 		idCounter++;
 	}
 	
-	public void setName(String name) {
-		if(name!=null && name.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+\\s?([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+)?"))
-		{
-			this.name = name;
-		}
-		else
-		{
-			this.name = "notknown";
-		}
-	}
-	public void setSurname(String surname) {
-		if(surname!=null && surname.matches("[A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+[-]?([A-ZĒŪĪĀŠĢĶĻŅČŽ]{1}[a-zēūīļķģšāžčņ]+)?"))
-		{
-			this.surname = surname;
-		}
-		else
-		{
-			this.surname = "notknown";
-		}
-	}
+	
 	public void setDegree(ProfDegree degree)
 	{
 		if(degree!=null)
@@ -72,17 +44,16 @@ public class Professor {
 //4. konstruktori
 	public Professor()
 	{
+		super();//tiek izsaukts Person() bez.arg.konstruk.
 		setId();
-		setName("Test");
-		setSurname("Professor");
 		setDegree(ProfDegree.master);
 	}
 	
 	public Professor(String name, String surname, ProfDegree degree)
 	{
+		//izsaukt Personas klases arg.konstruktoru
+		super(name, surname);
 		setId();
-		setName(name);
-		setSurname(surname);
 		setDegree(degree);
 	}
 	
@@ -98,7 +69,7 @@ public class Professor {
 	//0 Karina Sķirmante master
 	public String toString()
 	{
-		return id+ " "+name + " " + surname + " " + degree;
+		return id+ " "+super.toString() + " " + degree;
 	}
 //6. - pārējās funkcijas
 	
