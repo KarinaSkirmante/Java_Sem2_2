@@ -116,6 +116,16 @@ public class VeAService {
 		}
 	}
 	
+	private static Course readCourseById(int courseId)
+	{
+		if(courseId>=10000 && courseId<100000)
+		{
+			
+		}
+		
+		return new Course();
+	}
+	
 	
 	
 	
