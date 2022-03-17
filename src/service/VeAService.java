@@ -149,6 +149,23 @@ public class VeAService {
 		return false;
 	}
 	
+	//D - delete
+	private static boolean deleteCourseById(int courseId)
+	{
+		if(courseId>=10000 && courseId<100000)
+		{
+			for (Course course : allCourses) {
+				if(course.getId() == courseId)
+				{
+					allCourses.remove(course);
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
 	
 	
 	
