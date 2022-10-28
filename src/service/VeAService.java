@@ -13,7 +13,7 @@ import models.Professor;
 import models.Student;
 
 
-
+//jauns komentars
 public class VeAService {
 
 	//izveidot Person srasktu un tajā ielikt Student un Professor
